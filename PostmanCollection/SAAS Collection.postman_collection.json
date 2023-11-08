@@ -1,0 +1,3788 @@
+{
+	"info": {
+		"_postman_id": "8f7e1d2f-9474-46ec-81b5-dc59a022d243",
+		"name": "SAAS Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23908493"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/product/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsAllDetails",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/product/allDetails",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"allDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"p_name\" : \"Building\",\n    \"p_description\" : \"NSP HB1 tower 110054 \",\n    \"productCategories\": 16,\n    \"productSubCategory\": 5,\n    \"modelNo\": 100,\n    \"qty\": 3,\n    \"qr_type\": 1\n}\n\n    \n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/product/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProduct",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/product/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editProductById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"p_name\": \"peeem\",\n    \"p_description\": \"Nataraj HB Pencil\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/product/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "38w"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProductById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/product/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllProducts",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/product/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "addNewAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@gnedfied.org\",\n    \"password\": \"sahil@1211\",\n    \"phone\": 9599231079,\n    \"name\" : \"Sahil Yadav\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/admin/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@genuinemark.org\",\n    \"password\": \"Sahil@1211\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMywiaXNfYWRtaW4iOnRydWUsImlhdCI6MTY3MjgxNTIyMCwiZXhwIjoxNjcyOTAxNjIwLCJpc3MiOiJHZW5pZmllZCJ9.DbmNCcYpnbgP01eIvWwWrJGTxRzTU2cQJDM4AYY8lyU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\":\"sahil@1211\",\n    \"password\": \"Sahil@1211\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/changepassword/23",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"changepassword",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateAccess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/admin/validate",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rewardify",
+			"item": [
+				{
+					"name": "addNewRewardifyOption",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"option_name\":\"Dynamic Copuon Based\",\n    \"sub_option_array\":[\n      { \"key\": 1, \"taken\": false, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Wallet System for coupon storage \" }\n    ]\n   \n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/rewardify/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"rewardify",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editRewardifyOption",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"option_name\":\"Dynamic Copuon Based\",\n    \"sub_option_array\":[\n      { \"key\": 1, \"taken\": true, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": true, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": true, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": true, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": true, \"value\": \"Wallet System for coupon storage \" }\n    ]\n   \n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/rewardify/6",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"rewardify",
+								"6"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRewardifyEntries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/rewardify/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"rewardify",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@genuinemark.org\",\n    \"password\": \"Sahil@1211\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateAccess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/admin/validate",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GenuineMark",
+			"item": [
+				{
+					"name": "addNewRewardifyOption",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"option_name\": \"Scratch Based\",\n    \"sub_option_array\": [\n        {\n            \"key\": 1,\n            \"taken\": false,\n            \"value\": \"Product info with Genuinity\"\n        },\n        {\n            \"key\": 2,\n            \"taken\": false,\n            \"value\": \"Form based scratch genuinity\"\n        },\n        {\n            \"key\": 3,\n            \"taken\": false,\n            \"value\": \"Genuinity based reward\"\n        },\n        {\n            \"key\": 4,\n            \"taken\": false,\n            \"value\": \"Genuinity based warranty\"\n        },\n        {\n            \"key\": 5,\n            \"taken\": false,\n            \"value\": \"Genuinity based scan & win\"\n        },\n        {\n            \"key\": 6,\n            \"taken\": false,\n            \"value\": \"Scratch with genuinity\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/genuine/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"genuine",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editRewardifyOption",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"option_name\":\"Dynamic Copuon Based\",\n    \"sub_option_array\":[\n      { \"key\": 1, \"taken\": true, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": true, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": true, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": true, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": true, \"value\": \"Wallet System for coupon storage \" }\n    ]\n   \n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/genuine/6",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"genuine",
+								"6"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRewardifyEntries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/genuine/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"genuine",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RewardifyUsage",
+			"item": [
+				{
+					"name": "getOneRewardifyOption",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/rewardifyUsage/19",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"rewardifyUsage",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewRewardifyOption",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vendor_id\":41,\n    \"options\":{\n    \"Copuon Based\": [\n      { \"key\": 1, \"taken\": true, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": true, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Wallet System for coupon storage \" }\n    ],\n    \"Points System\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Category/Product based point\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Single Product Info with point claim\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Multiple product scan with point claim\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wallet for points\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Reedemption feature\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Earn/Redeem passbook history\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Gift Catalogue\" },\n      { \"key\": 8, \"taken\": true, \"value\": \"Dynamic Gift Catalogue System\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"Onetime Gift Catalogue System\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Redeem Cart selection feature\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ],\n    \"Cashback\": [\n      { \"key\": 1, \"taken\": true, \"value\": \"Cash amount popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Profile Confirmation\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Payment method Confirmation\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Bank account system\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"UPI System\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Paytm System\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Payment summery visibility\" }\n    ],\n    \"Wheel\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Wheel on Dashboard\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Wheel on Menu\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Wheel items setup onetime\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wheel item dynamic setup\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Gift Based Wheel\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Cash Based Wheel\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Mixed (Gift/Cash) Based Wheel\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Location Based wheel\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"User based wheel\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Scanning Based wheel\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Day/month/time Based Wheel\" }\n    ],\n    \"Scan & Win\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Win Item Popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Win item list\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Claim win item list\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"History of win/claim\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Win Item Confirmation\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ]\n  }\n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/rewardifyUsage/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"rewardifyUsage",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editRewardifyUsageOption",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"options\":{\n    \"Copuon Based\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Wallet System for coupon storage \" }\n    ],\n    \"Points System\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Category/Product based point\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Single Product Info with point claim\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Multiple product scan with point claim\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wallet for points\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Reedemption feature\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Earn/Redeem passbook history\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Gift Catalogue\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Dynamic Gift Catalogue System\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"Onetime Gift Catalogue System\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Redeem Cart selection feature\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ],\n    \"Cashback\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Cash amount popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Profile Confirmation\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Payment method Confirmation\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Bank account system\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"UPI System\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Paytm System\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Payment summery visibility\" }\n    ],\n    \"Wheel\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Wheel on Dashboard\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Wheel on Menu\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Wheel items setup onetime\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wheel item dynamic setup\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Gift Based Wheel\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Cash Based Wheel\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Mixed (Gift/Cash) Based Wheel\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Location Based wheel\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"User based wheel\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Scanning Based wheel\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Day/month/time Based Wheel\" }\n    ],\n    \"Scan & Win\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Win Item Popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Win item list\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Claim win item list\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"History of win/claim\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Win Item Confirmation\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ]\n  }\n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/rewardifyUsage/41",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"rewardifyUsage",
+								"41"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRewardifyusageEntries",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@gnedfied.org\",\n    \"password\": \"sahil@1211\",\n    \"phone\": 9599231079,\n    \"name\" : \"Sahil Yadav\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/rewardifyUsage/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"rewardifyUsage",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@genuinemark.org\",\n    \"password\": \"Sahil@1211\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GenuineMarkUsage",
+			"item": [
+				{
+					"name": "getOneGmOption",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/gmUsage/17",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"gmUsage",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewGMOption",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vendor_id\":41,\n    \"options\":{\n    \"Copuon Based\": [\n      { \"key\": 1, \"taken\": true, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": true, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Wallet System for coupon storage \" }\n    ],\n    \"Points System\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Category/Product based point\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Single Product Info with point claim\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Multiple product scan with point claim\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wallet for points\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Reedemption feature\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Earn/Redeem passbook history\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Gift Catalogue\" },\n      { \"key\": 8, \"taken\": true, \"value\": \"Dynamic Gift Catalogue System\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"Onetime Gift Catalogue System\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Redeem Cart selection feature\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ],\n    \"Cashback\": [\n      { \"key\": 1, \"taken\": true, \"value\": \"Cash amount popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Profile Confirmation\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Payment method Confirmation\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Bank account system\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"UPI System\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Paytm System\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Payment summery visibility\" }\n    ],\n    \"Wheel\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Wheel on Dashboard\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Wheel on Menu\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Wheel items setup onetime\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wheel item dynamic setup\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Gift Based Wheel\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Cash Based Wheel\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Mixed (Gift/Cash) Based Wheel\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Location Based wheel\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"User based wheel\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Scanning Based wheel\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Day/month/time Based Wheel\" }\n    ],\n    \"Scan & Win\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Win Item Popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Win item list\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Claim win item list\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"History of win/claim\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Win Item Confirmation\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ]\n  }\n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/gmUsage/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"gmUsage",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editGMUsageOption",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"options\":{\n    \"Copuon Based\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Wallet System for coupon storage \" }\n    ],\n    \"Points System\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Category/Product based point\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Single Product Info with point claim\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Multiple product scan with point claim\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wallet for points\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Reedemption feature\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Earn/Redeem passbook history\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Gift Catalogue\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Dynamic Gift Catalogue System\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"Onetime Gift Catalogue System\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Redeem Cart selection feature\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ],\n    \"Cashback\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Cash amount popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Profile Confirmation\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Payment method Confirmation\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Bank account system\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"UPI System\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Paytm System\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Payment summery visibility\" }\n    ],\n    \"Wheel\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Wheel on Dashboard\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Wheel on Menu\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Wheel items setup onetime\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wheel item dynamic setup\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Gift Based Wheel\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Cash Based Wheel\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Mixed (Gift/Cash) Based Wheel\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Location Based wheel\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"User based wheel\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Scanning Based wheel\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Day/month/time Based Wheel\" }\n    ],\n    \"Scan & Win\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Win Item Popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Win item list\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Claim win item list\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"History of win/claim\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Win Item Confirmation\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ]\n  }\n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/gmUsage/41",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"gmUsage",
+								"41"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllGMUsageEntries",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@gnedfied.org\",\n    \"password\": \"sahil@1211\",\n    \"phone\": 9599231079,\n    \"name\" : \"Sahil Yadav\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/gmUsage/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"gmUsage",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DwanUsage",
+			"item": [
+				{
+					"name": "getOneOption",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/dwanUsage/17",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"dwanUsage",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewOption",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vendor_id\":41,\n    \"options\":{\n    \"Copuon Based\": [\n      { \"key\": 1, \"taken\": true, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": true, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Wallet System for coupon storage \" }\n    ],\n    \"Points System\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Category/Product based point\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Single Product Info with point claim\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Multiple product scan with point claim\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wallet for points\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Reedemption feature\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Earn/Redeem passbook history\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Gift Catalogue\" },\n      { \"key\": 8, \"taken\": true, \"value\": \"Dynamic Gift Catalogue System\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"Onetime Gift Catalogue System\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Redeem Cart selection feature\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ],\n    \"Cashback\": [\n      { \"key\": 1, \"taken\": true, \"value\": \"Cash amount popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Profile Confirmation\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Payment method Confirmation\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Bank account system\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"UPI System\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Paytm System\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Payment summery visibility\" }\n    ],\n    \"Wheel\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Wheel on Dashboard\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Wheel on Menu\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Wheel items setup onetime\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wheel item dynamic setup\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Gift Based Wheel\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Cash Based Wheel\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Mixed (Gift/Cash) Based Wheel\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Location Based wheel\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"User based wheel\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Scanning Based wheel\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Day/month/time Based Wheel\" }\n    ],\n    \"Scan & Win\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Win Item Popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Win item list\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Claim win item list\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"History of win/claim\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Win Item Confirmation\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ]\n  }\n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/dwanUsage/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"dwanUsage",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editUsageOption",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"options\":{\n    \"Copuon Based\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Static Coupon System\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Dynamic Coupon System\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Coupon integrated with API\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Redeem  coupon Integrated with Website\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Wallet System for coupon storage \" }\n    ],\n    \"Points System\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Category/Product based point\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Single Product Info with point claim\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Multiple product scan with point claim\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wallet for points\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Reedemption feature\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Earn/Redeem passbook history\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Gift Catalogue\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Dynamic Gift Catalogue System\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"Onetime Gift Catalogue System\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Redeem Cart selection feature\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ],\n    \"Cashback\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Cash amount popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Profile Confirmation\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Payment method Confirmation\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Bank account system\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"UPI System\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Paytm System\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Payment summery visibility\" }\n    ],\n    \"Wheel\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Wheel on Dashboard\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Wheel on Menu\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Wheel items setup onetime\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"Wheel item dynamic setup\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Gift Based Wheel\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Cash Based Wheel\" },\n      { \"key\": 7, \"taken\": false, \"value\": \"Mixed (Gift/Cash) Based Wheel\" },\n      { \"key\": 8, \"taken\": false, \"value\": \"Location Based wheel\" },\n      { \"key\": 9, \"taken\": false, \"value\": \"User based wheel\" },\n      { \"key\": 10, \"taken\": false, \"value\": \"Scanning Based wheel\" },\n      { \"key\": 11, \"taken\": false, \"value\": \"Day/month/time Based Wheel\" }\n    ],\n    \"Scan & Win\": [\n      { \"key\": 1, \"taken\": false, \"value\": \"Win Item Popup\" },\n      { \"key\": 2, \"taken\": false, \"value\": \"Win item list\" },\n      { \"key\": 3, \"taken\": false, \"value\": \"Claim win item list\" },\n      { \"key\": 4, \"taken\": false, \"value\": \"History of win/claim\" },\n      { \"key\": 5, \"taken\": false, \"value\": \"Win Item Confirmation\" },\n      { \"key\": 6, \"taken\": false, \"value\": \"Gift Delivery Status\" }\n    ]\n  }\n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/dwanUsage/41",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"dwanUsage",
+								"41"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsageEntries",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@gnedfied.org\",\n    \"password\": \"sahil@1211\",\n    \"phone\": 9599231079,\n    \"name\" : \"Sahil Yadav\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/dwanUsage/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"dwanUsage",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DynamicForm",
+			"item": [
+				{
+					"name": "getOneOption",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/dynamicForm/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"dynamicForm",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewOption",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"QuikLinx Template 1\",\n    \"form_type\": \"0\",\n    \"industry\": 1,\n    \"template_json\": [\n        {\n            \"label\": \"name\",\n            \"name\": \"name\",\n            \"type\": \"Text\",\n            \"required\": true,\n            \"maxLength\": 10\n        },\n        {\n            \"label\": \"Product Image\",\n            \"name\": \"name\",\n            \"type\": \"file\",\n            \"required\": true,\n            \"maxLength\": 10\n        },\n        {\n            \"label\": \"Date\",\n            \"name\": \"date\",\n            \"type\": \"Date\",\n            \"required\": true,\n            \"maxLength\": 10\n        },\n        {\n            \"label\": \"Phone\",\n            \"name\": \"phone\",\n            \"type\": \"Number\",\n            \"required\": true,\n            \"maxLength\": 10\n        },\n        {\n            \"label\": \"Options\",\n            \"name\": \"opt\",\n            \"type\": \"select\",\n            \"required\": true,\n            \"maxLength\": 10,\n            \"options\": [\n                \"One\",\n                \"Two\",\n                \"Three\",\n                \"Four\",\n                \"Five\"\n            ]\n        },\n        {\n            \"label\": \"required\",\n            \"name\": \"name\",\n            \"type\": \"checkbox\",\n            \"required\": true,\n            \"maxLength\": 10\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/dynamicForm/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"dynamicForm",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editUsageOption",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"QuikLinx Template 1\",\n    \"form_type\": \"0\",\n    \"industry\": 1,\n    \"template_json\": [\n        {\n            \"label\": \"name\",\n            \"name\": \"name\",\n            \"type\": \"Text\",\n            \"required\": true,\n            \"maxLength\": 100\n        },\n        {\n            \"label\": \"Product Image\",\n            \"name\": \"name\",\n            \"type\": \"file\",\n            \"required\": true,\n            \"maxLength\": 10\n        },\n        {\n            \"label\": \"Date\",\n            \"name\": \"date\",\n            \"type\": \"Date\",\n            \"required\": true,\n            \"maxLength\": 10\n        },\n        {\n            \"label\": \"Phone\",\n            \"name\": \"phone\",\n            \"type\": \"Number\",\n            \"required\": true,\n            \"maxLength\": 10\n        },\n        {\n            \"label\": \"Options\",\n            \"name\": \"opt\",\n            \"type\": \"select\",\n            \"required\": true,\n            \"maxLength\": 10,\n            \"options\": [\n                \"One\",\n                \"Two\",\n                \"Three\",\n                \"Four\",\n                \"Five\"\n            ]\n        },\n        {\n            \"label\": \"required\",\n            \"name\": \"name\",\n            \"type\": \"checkbox\",\n            \"required\": true,\n            \"maxLength\": 10\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/dynamicForm/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"dynamicForm",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsageEntries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/dynamicForm/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"dynamicForm",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Industry",
+			"item": [
+				{
+					"name": "getOneIndustryOption",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/industry/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"industry",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewIndustry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"i_name\":\"Housing Furniture\",\n    \"i_users\":[\"Retailer\",\"Customer\",\"WholeSeller\"]\n}\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/industry/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"industry",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editRewardifyOption",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/industry/2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"industry",
+								"2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllIndustriesEntries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/industry/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"industry",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@genuinemark.org\",\n    \"password\": \"Sahil@1211\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateAccess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/admin/validate",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendor",
+			"item": [
+				{
+					"name": "vendorAddition",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"Sahil@1211\",\n    \"c_name\": \"testxyz\",\n    \"socials\": {\n        \"facebook\": \"www.fb.com\",\n        \"instagram\": \"www.ig.com\",\n        \"twitter\": \"www.tw.com\",\n        \"youtube\": \"www.yt.com\"\n    },\n    \"c_email\": \"tex32@gmail.com\",\n    \"c_mobile\": \"9938879655\",\n    \"website\": \"www.website.com\",\n    \"c_address\": {\n        \"homeAddress\": \"\",\n        \"state\": \"\",\n        \"country\": \"\",\n        \"district\": \"\",\n        \"landMark\": \"\",\n        \"city\": \"\",\n        \"pincode\": \"\"\n    },\n    \"c_gstin\": \"1122334455667788\",\n      \"c_status\":\"1\",\n      \"panel_status\":\"0\",\n      \"qr_type\":\"1\",\n      \"c_contact_person\":\"Some Name \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/vendor/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"vendor",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneVendor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/vendor/19",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"vendor",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllVendors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/admin/vendor/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"vendor",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVendor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productsavailing",
+									"value": "{\"Genuinity\":{\"taken\":false,\"users\":[]},\n\"DWAN\":{\"taken\":false,\"users\":[]},\n\"ScanAndWin\":{\"taken\":true,\"users\":[]},\n\"Rewardify\":{\"taken\":true,\"users\":[]},\n\"SupplyBeam\":{\"taken\":true,\"users\":[]},\n\"HybridOcean\":{\"taken\":false,\"users\":[]}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/vendor/14",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"vendor",
+								"14"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vendorLogin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahil.yadav@genuinemark.org\",\n    \"password\": \"Sahil@1211\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/admin/vendor/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"admin",
+								"vendor",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VendorUser",
+			"item": [
+				{
+					"name": "vendorUserAdditionFormData",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "u_address",
+									"value": "{\"homeAddress\":\"\",\"state\":\"\",\"country\":\"\",\"district\":\"\",\"landMark\":\"\",\"city\":\"\",\"pincode\":\"\"}",
+									"type": "text"
+								},
+								{
+									"key": "otherInfo",
+									"value": "{\"facebook\":\"www.fb.com\",\"instagram\":\"www.ig.com\",\"twitter\":\"www.tw.com\",\"youtube\":\"www.yt.com\"}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Sahil@1211",
+									"type": "text"
+								},
+								{
+									"key": "u_name",
+									"value": "Sahil",
+									"type": "text"
+								},
+								{
+									"key": "u_email",
+									"value": "sahilyadav@test.com",
+									"type": "text"
+								},
+								{
+									"key": "u_mobile",
+									"value": "8899002211",
+									"type": "text"
+								},
+								{
+									"key": "u_altr_mobile",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_role",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "u_status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "u_dob",
+									"value": "2022-12-23 03:45:30",
+									"type": "text"
+								},
+								{
+									"key": "u_doj",
+									"value": "2022-12-23 03:45:30",
+									"type": "text"
+								},
+								{
+									"key": "u_pan",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "u_aadhar",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "tenant_slug",
+									"value": "tenant2",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/sahilyadav/Downloads/Bill.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/vendorUser/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"vendorUser",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vendorUserAdditionRawBody",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"u_address\": \n    {\"homeAddress\":\"\",\"state\":\"\",\"country\":\"\",\"district\":\"\",\"landMark\":\"\",\"city\":\"\",\"pincode\":\"\"},\n    \"otherinfo\": \n    {\"facebook\":\"www.fb.com\",\"instagram\":\"www.ig.com\",\"twitter\":\"www.tw.com\",\"youtube\":\"www.yt.com\"},\n    \"password\": \"Sahil@1211\",\n    \"u_name\": \"Sahil\",\n    \"u_email\": \"sahil@test.com\",\n    \"u_mobile\": \"8899002211\",\n    \"u_altr_mobile\": \"\",\n    \"gender\": \"1\",\n    \"user_role\": \"1\",\n    \"u_status\": 1,\n    \"u_dob\": \"2022-12-02 05:45:30\",\n    \"u_doj\": \"2022-12-02 05:45:30\",\n    \"u_pan\": \"\",\n    \"u_aadhar\": \"\",\n    \"tenant_slug\": \"tenant2\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/vendorUser/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"vendorUser",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneVendor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/vendorUser/12",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"vendorUser",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllVendors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant56",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/vendorUser/get",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"vendorUser",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVendor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "c_status",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/vendorUser/15",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"vendorUser",
+								"15"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vendorLogin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sahilyadav@test.com\",\n    \"password\": \"Sahil@1211\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/vendorUser/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"vendorUser",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Batch",
+			"item": [
+				{
+					"name": "getAllBatches",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/batch/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewBatch",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"b_name\" : \"TESTKNEX\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/batch/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneBatch",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/batch/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProductById Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/batch/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QRCode",
+			"item": [
+				{
+					"name": "addNewQRCodeHistory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"batch_id\" : \"15\",\n    \"qr_count\" : \"5\",\n    \"product_id\":\"28\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/qr/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"qr",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneQrCodeHistory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"batch_id\" : \"15\",\n    \"qr_count\" : \"5\",\n    \"product_id\":\"28\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/qr/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"qr",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "118"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBatches Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "teanat2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/qr/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"qr",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QRCode History",
+			"item": [
+				{
+					"name": "addNewQRCodeHistory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n    \"user_id\" : 8,\n    \"user_type\" : 1,\n    \"qrcode_id\" : 119,\n    \"product_points\":30\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/rewardifyHistory/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"rewardifyHistory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneQrCodeHistory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"batch_id\" : \"15\",\n    \"qr_count\" : \"5\",\n    \"product_id\":\"28\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/qr/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"qr",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "118"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBatches Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/qr/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"qr",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductCategories",
+			"item": [
+				{
+					"name": "deleteProductCategoryByI",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/prodCategory/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodCategory",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewProductCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"SelfCare\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodCategory/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodCategory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodCategory/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodCategory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProductCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodCategory/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodCategory",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editProductCategoryById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\": \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodCategory/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodCategory",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "22"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserRoles",
+			"item": [
+				{
+					"name": "deleteUserRoleById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/userPermission/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"userPermission",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewUserRole",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"name\" : \"Retailer\",\n    \"permissions\" :[]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/userPermission/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"userPermission",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUserRoles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/userPermission/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"userPermission",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProductCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/userPermission/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"userPermission",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editProductCategoryById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"name\" : \"Adminn\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/userPermission/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"userPermission",
+								":id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gifts",
+			"item": [
+				{
+					"name": "addNewGiftFd",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "g_brand",
+									"value": "Bajaj 11",
+									"type": "text"
+								},
+								{
+									"key": "g_name",
+									"value": "Bajaj 2000W Heater Quantum ",
+									"type": "text"
+								},
+								{
+									"key": "g_value",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "g_price",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/sahilyadav/Downloads/QuikLinx-Cover-Image.jpg"
+								},
+								{
+									"key": "u_altr_mobile",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "user_role",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_status",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_dob",
+									"value": "2022-12-23 03:45:30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_doj",
+									"value": "2022-12-23 03:45:30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_pan",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_aadhar",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tenant_slug",
+									"value": "tenant2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/gift/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"gift",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGiftById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/gift/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"gift",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "48"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewGift",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"name\" : \"Retailer\",\n    \"permissions\" :{}\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/gift/add",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"gift",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllGifts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/gift/all",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"gift",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneGift",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/gift/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"gift",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editGiftDetailsFd",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "g_brand",
+									"value": "Baltra New ",
+									"type": "text"
+								},
+								{
+									"key": "g_name",
+									"value": "Baltra Mixer Juicer",
+									"type": "text"
+								},
+								{
+									"key": "g_value",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "g_price",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/sahilyadav/Downloads/QuikLinx-Cover-Image.jpg"
+								},
+								{
+									"key": "u_altr_mobile",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "user_role",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_status",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_dob",
+									"value": "2022-12-23 03:45:30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_doj",
+									"value": "2022-12-23 03:45:30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_pan",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "u_aadhar",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tenant_slug",
+									"value": "tenant2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/api/gift/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"gift",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editGiftDetails",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"name\" : \"Adminn\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/userPermission/:1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"userPermission",
+								":1"
+							],
+							"variable": [
+								{
+									"key": "1",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductPoints",
+			"item": [
+				{
+					"name": "deleteProductPointEntryByI",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/prodPoints/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodPoints",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewProductPoint",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cat_id\": 16,\n    \"sub_cat_id\": 6,\n    \"p_id\": 28,\n    \"points\": 30,\n    \"user_type\": 1,\n    \"created_by\": 39\n}\n\n\n    \n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodPoints/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodPoints",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductPoints",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodPoints/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodPoints",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProductPoint",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodPoints/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodPoints",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProductPointUsingQrCode",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodPoints/qrcode/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodPoints",
+								"qrcode",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0375c823-0b64-4cea-9b94-fe942e8ffffa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editProductPointEntryById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cat_id\": 15,\n    \"sub_cat_id\": 4,\n    \"p_id\": 2,\n    \"points\": 26,\n    \"user_type\": 1,\n    \"created_by\": 39\n}\n\n\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodPoints/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodPoints",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gift Redemption",
+			"item": [
+				{
+					"name": "deleteEntryByID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/giftRedemption/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"giftRedemption",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewHistory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 12,\n    \"user_role\": 1,\n    \"gifts\": {\n        \"gift_id\": 4,\n        \"gift_details\": {}\n    },\n    \"points_used\": 20,\n    \"status\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/giftRedemption/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"giftRedemption",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllRedemptions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/giftRedemption/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"giftRedemption",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneGiftRedemption",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/giftRedemption/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"giftRedemption",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProductPointUsingQrCode",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/giftRedemption/qrcode/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"giftRedemption",
+								"qrcode",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0375c823-0b64-4cea-9b94-fe942e8ffffa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editGiftRedemptionById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cat_id\": 15,\n    \"sub_cat_id\": 4,\n    \"p_id\": 2,\n    \"points\": 26,\n    \"user_type\": 1,\n    \"created_by\": 39\n}\n\n\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/giftRedemption/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"giftRedemption",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductSubCategories",
+			"item": [
+				{
+					"name": "deleteProductSubCategoryByI",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/prodSubCategory/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodSubCategory",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewProductSUbCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productCategory\": \"15\",\n    \"subCategoryName\" : \"Lamination\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodSubCategory/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodSubCategory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductSubCategory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localhost}}/api/prodSubCategory/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodSubCategory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProductSubCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodSubCategory/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodSubCategory",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProductSubCategorByCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoryName\" : \"Indoor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodSubCategory/subCat/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodSubCategory",
+								"subCat",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editProductSubCategoryById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productCategory\": \"13\",\n    \"subCategoryName\" : \"Lamination\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/prodSubCategory/:id",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"prodSubCategory",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "testingFolder",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "slug",
+								"value": "tenant2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3003/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "slug",
+									"value": "tenant1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

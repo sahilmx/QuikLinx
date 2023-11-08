@@ -1,0 +1,206 @@
+CREATE TABLE IF NOT EXISTS `products` (
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  p_name varchar(255) NOT NULL,
+  p_description varchar(255),
+  p_creation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+  p_updateion TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `batch` (
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  b_name varchar(255) NOT NULL,
+  qr_count int,
+  p_id varchar(255),
+  b_creation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `retailer` (
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `qr_code` (
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  qr_type int NOT NULL,
+  b_id int(11),
+  qr_parent_id int(11),
+  qr_creation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE IF NOT EXISTS `productCategories` (
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  categoryName varchar(255) NOT NULL,
+  creationTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `productSubCategories` (
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  productCategory int(11) NOT NULL ,
+  subCategoryName varchar(255) NOT NULL,
+  creationTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+ALTER TABLE products
+ADD COLUMN productCategories int(11) NOT NULL,
+ADD COLUMN productSubCategory int(11) NOT NULL,
+ADD COLUMN modelName varchar(255),
+ADD COLUMN modelNo varchar(255)
+;
+
+SELECT TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE='BASE TABLE'
+
+
+ALTER TABLE qrcodehistory modify COLUMN batch_id int (11) ;
+ALTER TABLE products ADD COLUMN qr_type int(11)
+
+
+
+select  p.p_name , p.p_description, p.p_creation,p.qty, p.modelNo,p.qr_type , psc.subCategoryName , pc.categoryName from products p  left  JOIN  productCategories pc on p.productCategories = pc.id 
+ left join productSubCategories psc on  p.productSubCategory = psc.id ;
+
+
+CREATE TABLE qrCodeHistory AS SELECT * FROM batch;
+
+ALTER TABLE qrCodeHistory rename COLUMN p_id TO product_id;
+CHANGE COLUMN b_name to b_id;
+
+ALTER TABLE qrCodeHistory
+ALTER COLUMN b_name int(11);
+
+
+ALTER TABLE qrcodehistory  change id id int(11) AUTO_INCREMENT PRIMARY KEY ;
+
+
+
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE SEQUENCE company_profile_seq;
+
+CREATE TABLE IF NOT EXISTS company_profile (
+  id int NOT NULL PRIMARY KEY DEFAULT NEXTVAL ('company_profile_seq'),
+  c_name varchar(255) NOT NULL,
+  socials json,
+  c_email varchar(20),
+  c_mobile varchar(20),
+  website varchar(100),
+  c_address varchar(255),
+  c_gstin varchar(50) ,
+  p_id varchar(255),
+  created_on TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_on TIMESTAMP(0) NOT NULL
+
+) ;
+            
+pg_dump -U QuikLinx -d common_db -n public > schema_common_db.sql  
+pg_dump -U QuikLinx -d common_db -h localhost -p 5432  -t "\"tenants\"" > schema_common_db_tenants_data.sql 
+
+
+user_type
+varchar(1)
+user_id
+int
+gifts
+json
+points_used
+double
+status
+enum('0','1','2')
+created_on
+timestamp
+updated_on
+timestamp
+
+
+CREATE SEQUENCE gift_redemption_seq;
+
+CREATE TABLE IF NOT EXISTS gift_redemption (
+  id int NOT NULL PRIMARY KEY DEFAULT NEXTVAL ('gift_redemption_seq'),
+  user_id int,
+  user_role int NOT NULL,
+  ref_no varchar,
+  gifts json,
+  points_used varchar,
+  status int,
+  created_on TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_on TIMESTAMP(0) NOT NULL
+) ;
+
+
+
+
+
+Processing 
+Order Placed 
+Picked
+Left
+In Transit 
+Arrived
+Out for Delivery 
+Delivered
+
+
+INSERT INTO transaction_status VALUES('1','Processing');
+INSERT INTO transaction_status VALUES('2','Order Placed');
+INSERT INTO transaction_status VALUES('3','Picked');
+INSERT INTO transaction_status VALUES('4','Left');
+INSERT INTO transaction_status VALUES('5','In Transit');
+INSERT INTO transaction_status VALUES('6','Arrived');
+INSERT INTO transaction_status VALUES('7','Out for Delivery');
+INSERT INTO transaction_status VALUES('8','Delivered');
+
+
+
+
+CREATE SEQUENCE gift_scheme_seq;
+
+CREATE TABLE IF NOT EXISTS gift_scheme (
+  id int NOT NULL PRIMARY KEY DEFAULT NEXTVAL ('gift_scheme_seq'),
+  user_role int NOT NULL,
+  gifts json [],
+  status int,
+  start_date TIMESTAMP(0) NOT NULL,
+  end_date TIMESTAMP(0) NOT NULL,
+  created_on TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_on TIMESTAMP(0) NOT NULL
+) ;
+
+
+
+
+CREATE SEQUENCE company_profile_local_seq;
+
+CREATE TABLE company_profile_local (
+    id integer DEFAULT nextval('public.company_profile_local_seq'::regclass) NOT NULL,
+    c_name character varying(255) NOT NULL,
+    socials json,
+    c_email character varying,
+    c_customer_care_email character varying,
+    c_mobile character varying(20),
+    c_customer_care_mobile character varying(20),
+    website character varying(100),
+    c_address character varying(255),
+    c_gstin character varying(50),
+    logo character varying,
+    c_theme_colors json,
+    c_points_value float8 ,
+    c_price_value float8,
+    c_font_family character varying,
+    created_on timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_on timestamp without time zone NOT NULL
+);
+

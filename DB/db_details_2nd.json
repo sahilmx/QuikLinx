@@ -1,0 +1,8 @@
+{
+    "host": "localhost",
+    "user": "sahil",
+    "password": "Sahil@1211",
+    "database": "sampleDb2",
+    "pool_size": 50,
+    "insecureAuth":"true"
+}

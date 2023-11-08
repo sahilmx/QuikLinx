@@ -1,0 +1,203 @@
+commit 5d603204cfa612726c243aedb55ce1e5d83a358d
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Jan 9 09:47:37 2023 +0530
+
+     Working on vendor
+
+commit 7b55fa5d46be8f3418bb5a812c3a38cb0857ef7a
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Jan 6 17:08:52 2023 +0530
+
+    Msg Options and Mail Options
+
+commit 1a352918c93ec45d0619b193271b9cfc57e298f6
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Jan 6 12:19:49 2023 +0530
+
+    working on scan and win
+
+commit eda6ee29dbfc830567c4a5db156142b3f3a8248c
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Thu Jan 5 17:53:18 2023 +0530
+
+    Dynamic Forms Master
+
+commit 102e551865be0fbd8a26e1f49b94bd07e1585696
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Wed Jan 4 16:26:35 2023 +0530
+
+    users permission and a bit DWAN
+
+commit af05df0b43a462e3d3a3351bf1954f4eab296afe
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Tue Jan 3 17:24:14 2023 +0530
+
+    genuinemark usage
+
+commit dbe03ecc578281dcff17e377ebc557bd5271b65d
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Tue Jan 3 11:49:43 2023 +0530
+
+     Genuinemark New Option along with Genuinemark Program selection
+
+commit ed6f603f8c6565f2844c510384b9dd86e2628d5b
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Jan 2 18:06:51 2023 +0530
+
+     genuine mark master setup
+
+commit d2146dd90d5356e2a63216379eaf8bee6adf9760
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Jan 2 14:28:33 2023 +0530
+
+     Basic Setup Updation along with Rewaardify updation
+
+commit b43031f1d9172ca78a015aad366c015f95b44a77
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Dec 30 17:32:59 2022 +0530
+
+     Gift Addition and edition functionality
+
+commit 60e5323c8a198726d8c761a66ed0a07dcf82a2d5
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Wed Dec 28 16:51:15 2022 +0530
+
+    POC Multi Tenant along with Gifts (workng on gifts addition )
+
+commit 89578fc083331790e23c24cd82a99774cd7397c8
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Wed Dec 28 11:57:26 2022 +0530
+
+    Automated vendor creation with all the DB generated at the time of vendor creation
+
+commit 89e1975de1043733bda8f7eabe03e041160178a9
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Tue Dec 27 13:09:12 2022 +0530
+
+    Added user Permission
+
+commit 925b7786945c5cbc16e193bbd5cd652464445f18
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Tue Dec 27 13:08:40 2022 +0530
+
+    updated console things
+
+commit d4ee8415e8cf7e34337fd9eacb056544100f085b
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Dec 26 18:10:17 2022 +0530
+
+    Edit points add points all points redeempoints are added
+
+commit d4486ff2f3d7ca1c926209f3eb393d146f014c26
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Dec 23 18:30:03 2022 +0530
+
+    working on frontend of rewardify back panel
+
+commit 89c6a685e6a994c4b004b7d338dd38afe0dc2b91
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Dec 23 16:50:17 2022 +0530
+
+     fixed knex instance issue using async-local-storage
+
+commit c00844710d30b3472f62ea93d276b756c9fdb5a2
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Thu Dec 22 11:00:18 2022 +0530
+
+    tenant login and product points addition
+
+commit f575a925f6619f4246d73521dd5ef628ebd21b69
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Tue Dec 20 13:10:29 2022 +0530
+
+     removed node modules
+
+commit e5b1c49682a7f239754829a2b65e9e6417825295
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Dec 19 18:04:22 2022 +0530
+
+    Rewardify options addition along with adding new options to master setup and removing as well along with this user can select usertypes they will be using with some default and can add custom as well user role defination will be specified in tenant individual db not in main common DB and the options a vendor/company will be using is stored with individual db and their id refring the usage options
+
+commit fac9108aed67412f166b098fbe48fb28070eb574
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Dec 16 18:07:16 2022 +0530
+
+    Rewardify module addition along with the backedn of it ann more features it ye to be added and rewardify usage permissions for vendro yet to be added
+
+commit ade65b79a0634b242ca97fa2d24565856289d8c5
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Thu Dec 15 18:23:57 2022 +0530
+
+     Update vendor derails with updating the active status of vendor along with managing the upload image option while registring and updating the vendor
+
+commit 5b486477da1909679e7d3ca228d9375102dd436e
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Tue Dec 13 18:33:50 2022 +0530
+
+    worked on program selection , partner registraion updates
+
+commit 2d8321f63560a0832450a8ae58f56421e58459c2
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Dec 12 18:16:46 2022 +0530
+
+    tenant registreation with creation of a seprate tenantdb ;
+
+commit fe06592f9972d6ea1712dfd58824f3f88f0407eb
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Dec 9 18:28:02 2022 +0530
+
+     Added Admin Login , Signup with some progress in router section
+
+commit e852f0f1bc819cc07c64133509ee97d257d27f10
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Thu Dec 8 18:34:41 2022 +0530
+
+     worked on admin jwt
+
+commit 9487b22d877614e359a0205f8e58513cd8345929
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Tue Dec 6 15:47:18 2022 +0530
+
+     Added Product Edit
+
+commit c07b10595b146755890f98656ff8c1cf07f3a473
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Dec 5 17:35:11 2022 +0530
+
+     sample db sql file
+
+commit 33c720bf1cb6d4ad7ba3144ce599fc933a95f51f
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Dec 5 17:32:44 2022 +0530
+
+     added view
+
+commit 8e214ad710d114a1226eaf0d60addec584b9e0e6
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Mon Dec 5 17:23:31 2022 +0530
+
+     Complex Qr Backend Updated
+
+commit 823403860133c0774f8f25a0724f6a07e8791bd8
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Sat Dec 3 11:00:39 2022 +0530
+
+    qr model upgrade
+
+commit b2a35997dee60302529a8f8a4e4f8e301c58f22d
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Dec 2 17:24:51 2022 +0530
+
+    qr code history
+
+commit 54b20c8291a5c7c362597b4049bb34274ff1e9fd
+Author: sahilQuikLinx <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Dec 2 14:23:58 2022 +0530
+
+    added the view
+
+commit b0467b95114fa8467f08935b908258d2233fae5f
+Author: Sahil Yadav <sahilyadav@Sahils-MacBooK.local>
+Date:   Fri Dec 2 12:24:46 2022 +0530
+
+    Initial Commit

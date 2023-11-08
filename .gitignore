@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -47,10 +48,18 @@ web_modules/
 
 # TypeScript cache
 *.tsbuildinfo
+=======
+# VsCode
+.vscode/
+
+# Dependency directories
+node_modules/
+>>>>>>> 8075a5b (initial commit with mongo integrated)
 
 # Optional npm cache directory
 .npm
 
+<<<<<<< HEAD
 # Optional eslint cache
 .eslintcache
 
@@ -128,3 +137,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+=======
+# dotenv environment variables file
+.env
+
+>>>>>>> 8075a5b (initial commit with mongo integrated)
