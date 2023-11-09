@@ -14,17 +14,9 @@ exports.create = async (req, res) => {
     });
   }
 
-  // Create a new Admin
-  const admin = new Admin({
-    email: req.body.email,
-    password: utils.getHash(req.body.password),
-    phone: req.body.phone,
-    name: req.body.name,
-    create_date: new Date(),
-  });
   console.log("admin req called ",req.body);
   req.body.password=utils.getHash(req.body.password);
-     const createAdmin = await Admin_mongo.create(req, res);
+ const createAdmin = await Admin_mongo.create(req, res);
 
   // if (err)
   //       res.status(500).send({
@@ -63,62 +55,12 @@ exports.create = async (req, res) => {
 exports.verifyAndAuthorize = async (req, res) => {
   try {
 
-    const admin_d_m = await Admin_mongo.fetch(req,res);
-    
-    // const admin_data = await Admin.get(["id", "password", "isValid"], {
-    //   email,
-    // });
+    const admin = await Admin_mongo.fetch(req,res);
 
-    // if (!admin_data || !admin_data.id) {
-    //   res.send({
-    //     success: false,
-    //     message: "There is no admin with this email",
-    //   });
-    //   return;
-    // }
-
-    // if (admin_data.password != utils.getHash(password)) {
-    //   res.send({
-    //     success: false,
-    //     message: "Password is incorrect",
-    //   });
-    //   return;
-    // }
-
-    // const { token } = utils.getToken(
-    //   { user_id: admin_data.id, is_admin: true },
-    //   process.env.ACCESS_TOKEN_IDRSA,
-    //   "access_token",
-    // );
-    //   new Cookies(req, res).set('accessToken', token, {
-    //     httpOnly: true
-    //   });
-    // res.cookie('accessToken', , {
-    //   httpOnly: true
-    // });
-
-    // let options = {
-    //   maxAge: 1000 * 60 * 15, // would expire after 15 minutes
-    //   httpOnly: true, // The cookie only accessible by the web server
-    //   signed: false, // Indicates if the cookie should be signed
-    // };
-
-    // Set cookie
-    // res.cookie("accessToken", token, options);
-    // res.send({
-    //   success: true,
-    //   // token,
-    //   adminId: email,
-    //   message: "LoggedIn successfully",
-    // });
-    // console.log(res);
   } catch (error) {
     console.log(error);
     utils.handleError(error, "verifyAndAuthorize", source_file);
-    // res.send({
-    //   success: false,
-    //   error: error,
-    // });
+    
   }
 };
 
@@ -199,37 +141,15 @@ exports.changePassword = async (req, res) => {
 
   try {
     let id = req.params.id;
-    const admin_data = await Admin.get(["id", "password", "isValid"], {
-      id,
-    });
+    console.log({req});
 
-    if (admin_data.password == utils.getHash(req.body.oldPassword)) {
-      let adminUpdate = new Admin(req.body);
-      adminUpdate.password = utils.getHash(req.body.password);
-      Admin.updateById(req.params.id, adminUpdate, (err, data) => {
-        if (err) {
-          if (err.kind === "not_found") {
-            res.status(404).send({
-              message: `Not found Admin with id ${req.params.id}.`,
-            });
-          } else {
-            res.status(500).send({
-              message:
-                "Error updating Password for admin with id " + req.params.id,
-            });
-          }
-        } else {
-          delete data.password;
-          res.send(data);
-        }
-      });
-    } else {
-      res.status(404).send({
-        message: "Password Not Matching",
-      });
-    }
+    const admin_data = await Admin_mongo.fetchValues(req,res,id);
+    // const admin_data = await Admin.get(["id", "password", "isValid"], {
+    //   id,
+    // });
     console.log({ admin_data });
   } catch (error) {
+    utils.handleError(error,"changeAdminPassword",req.body)
     res.status(500).send({
       message: "Error updating Password for admin Password ",
     });

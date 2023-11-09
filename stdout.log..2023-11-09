@@ -3,3 +3,18 @@
 {"level":"error","message":"Error occured [verifyAndAuthorize] in file [adminController] -> TypeError: Cannot read properties of undefined (reading 'status')"}
 {"level":"error","message":"Error occured [verifyAndAuthorize] in file [adminController] -> TypeError: Cannot read properties of undefined (reading 'status')"}
 {"level":"error","message":"Error occured [verifyAndAuthorize] in file [adminController] -> TypeError: Cannot read properties of undefined (reading 'status')"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}
+{"level":"info","message":"User created -> {\"user_id\":\"654be1ab9e76587bad21bc4e\",\"is_admin\":true}"}

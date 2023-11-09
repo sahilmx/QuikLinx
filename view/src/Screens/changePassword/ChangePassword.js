@@ -93,10 +93,10 @@ export default function ChangePassword() {
           "oldPassword": oldPassword,
           "password": companyPassword
         });
-        
+        let id = sessionStorage.getItem("adminId");
         var config = {
           method: 'put',
-          url: 'http://127.0.0.1:3003/admin/changepassword/23',
+          url: 'http://127.0.0.1:3003/admin/changepassword/'+id,
           headers: { 
        //    'slug': 'tenant1', 
             'Authorization': 'Bearer '+sessionStorage.getItem('access_token'), 
