@@ -140,10 +140,8 @@ exports.changePassword = async (req, res) => {
   }
 
   try {
-    let id = req.params.id;
-    console.log({req});
 
-    const admin_data = await Admin_mongo.fetchValues(req,res,id);
+    const admin_data = await Admin_mongo.fetchValues(req,res);
     // const admin_data = await Admin.get(["id", "password", "isValid"], {
     //   id,
     // });

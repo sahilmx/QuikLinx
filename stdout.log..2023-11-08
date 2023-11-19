@@ -1,6 +1,0 @@
-{"level":"error","message":"Error occured [get] in file [adminModel] -> KnexTimeoutError: Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call?"}
-{"level":"error","message":"Error occured [get] in file [adminModel] -> KnexTimeoutError: Knex: Timeout acquiring a connection. The pool is probably full. Are you missing a .transacting(trx) call?"}
-{"level":"error","message":"Error occured [verifyAndAuthorize] in file [adminController] -> TypeError: Cannot read properties of undefined (reading 'status')"}
-{"level":"error","message":"Error occured [verifyAndAuthorize] in file [adminController] -> TypeError: Cannot read properties of undefined (reading 'status')"}
-{"level":"error","message":"Error occured [verifyAndAuthorize] in file [adminController] -> TypeError: Cannot read properties of undefined (reading 'status')"}
-{"level":"error","message":"Error occured [verifyAndAuthorize] in file [adminController] -> ReferenceError: admin_data is not defined"}

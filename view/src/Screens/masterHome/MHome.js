@@ -30,7 +30,9 @@ export default function MHome() {
     
     axios(config)
     .then(function (response) {
-      setTableDataItems(response.data);
+      console.log("this is the response of the vendor apis ",response.data.data);
+      setTableDataItems(response.data.data);
+      console.log("this is the datatables items", response.data.data)
     })
     .catch(function (error) {
       console.log(error);
@@ -49,20 +51,20 @@ export default function MHome() {
 
   const handleButtonClick = (r) => {
     console.log(r);
-    console.log(tableDataItems);
+    console.log({tableDataItems});
     let tbc=[...tableDataItems];
     let data;
     tbc.forEach((element)=>{
         
          if(element.id==r.id){
-          if(element.c_status==0) {element.c_status=1;
+          if(element.deleted==0) {element.deleted=1;
           console.log("status changed to 1 ")
           }
-          else {element.c_status=0;
+          else {element.deleted=0;
             console.log("status changed to 0 ")
           }
           data = JSON.stringify({
-            "c_status": `${element.c_status}`
+            "deleted": `${element.deleted}`
           }); 
       }
     });
@@ -70,7 +72,7 @@ export default function MHome() {
     setTableDataItems(tbc);
     var config = {
       method: 'put',
-      url: `http://127.0.0.1:3003/admin/vendor/${r.id}`,
+      url: `http://127.0.0.1:3003/admin/vendor/${r._id}`,
       headers: { 
         'Content-Type': 'application/json',
         'Authorization': 'Bearer '+sessionStorage.getItem('access_token'), 
@@ -99,47 +101,47 @@ export default function MHome() {
 
       {
         name: "Id",
-        selector: (row) => row.id,
+        selector: (row) => row._id,
         sortable: true,
        
       },
       {
         name: "Name",
-        selector: (row) => row.c_name,
+        selector: (row) => row.pName,
         sortable: true,
         
       },
       {
         name: "Email",
-        selector: (row) => row.c_email,
+        selector: (row) => row.pEmail,
         sortable: true,
       },
       {
         name: "Mobile",
-        selector: (row) => row.c_mobile,
+        selector: (row) => row.pPhone,
         sortable: true,
       },
       {
         name: "Created On",
-        selector: (row) => row.created_on,
+        selector: (row) => row.createdAt,
         sortable: true,
       },
       {
         name: "Panel Status",
-        selector: (row) => {if(row.c_panel_status==0){
+        selector: (row) => {if(row.pDemoValue==0){
           return "Demo"
-        }else if(row.c_panel_status==1){
+        }else if(row.pDemoValue==1){
           return  "Testing/Staging"
-        }else if(row.c_panel_status==2){
+        }else if(row.pDemoValue==2){
           return  "Pre-Production"
-        }else if(row.c_panel_status==3){
+        }else if(row.pDemoValue==3){
           return "Production (Live)"
         }else return "Null"},
         sortable: true,
       },
       {
         name:"Change Status",
-        cell: (r) => <button  className="btn btn-outline-primary btn-sm" onClick={()=>handleButtonClick(r)}>{r.c_status?'In-Active':'Active'}</button>,
+        cell: (r) => <button  className="btn btn-outline-primary btn-sm" onClick={()=>handleButtonClick(r)}>{r.deleted?'In-Active':'Active'}</button>,
         ignoreRowClick: true,
         allowOverflow: true,
         button: true,

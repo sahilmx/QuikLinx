@@ -1,5 +1,7 @@
 const path = require("path");
-const Vendor = require("../controller/vendor.controller");
+// const Vendor = require("../controller/vendor.controller");
+const Vendor = require("../controller/vendor.model_mongo");
+
 const router = require("express").Router();
 const multer = require("multer");
 const logger = require("../helper/logger");
@@ -40,17 +42,23 @@ const upload = multer({
 const companyLogo = upload.single("file");
 
 //get all vendors
+router.get("/get", async (req, res) => {
+  return await Vendor.fetchAll(req, res)
+});
 
-router.get("/get", Vendor.findAll);
+router.get("/:id", async (req, res) => {
+  return await Vendor.fetch(req, res)
+});
 
-router.get("/:id", Vendor.findOne);
+
+
 
 
 
 // Login the vendor 
 
 
-router.post("/login", Vendor.verifyAndAuthorize);
+// router.post("/login", Vendor.verifyAndAuthorize);
 
 
 //router.put("/:id", Vendor.update);
@@ -67,14 +75,18 @@ router.put("/:id", async (req, res) => {
   const details = Object.assign({}, req.body);
   console.log("reqfile", req.file);
   const file = req.file || {};
-  details.logo_full_path = file.path;
-  details.logo = file.filename;
-  details.logo_content_type = file.mimtype;
+  // details.logo_full_path = file.path;
+  // details.logo = file.filename;
+  // details.logo_content_type = file.mimtype;
   details.id=req.params.id;
   console.log({details: details});
+  details.id=req.params.id;
   try {
-    const data = await Vendor.update(details);
-    return res.status(200).send({ success: true, data: data });
+    // const data = await Vendor.update(details);
+
+    const data = await Vendor.update(details,res);
+
+    // return res.status(200).send({ success: true, data: data });
   } catch (err) {
   //  logger(err);
   console.log(err);
@@ -90,6 +102,7 @@ router.put("/:id", async (req, res) => {
 router.post("/add", async (req, res, next) => {
   companyLogo(req, res, (err) => {
     if (err) {
+      console.log("this is the vendor body",req.body)
       res.status(400).json({ message: err });
     }
     next();
@@ -105,7 +118,8 @@ router.post("/add", async (req, res) => {
   details.logo_content_type = file.mimtype;
 console.log(req.body);
   try {
-    const data = await Vendor.create(details);
+    const data = await Vendor.create(details,res);
+    // const data = await Vendor.create(details);
     return res.status(200).send({ success: true, data: data });
   } catch (err) {
    // logger(err);

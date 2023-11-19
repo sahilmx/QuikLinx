@@ -51,6 +51,8 @@ const initAdminDbConnection = DB_URL => {
     });
     require("../dbModel/globalMongo/tenant/schema");
     require("../dbModel/globalMongo/admin/schema")
+    require("../dbModel/globalMongo/partners/schema")
+
 
     // require all schemas !?
     return db;

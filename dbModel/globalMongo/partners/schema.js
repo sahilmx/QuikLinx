@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const tenantSchema = new Schema(
+const partnerSchema = new Schema(
   {
     pName: {
       type: String,
@@ -37,24 +37,50 @@ const tenantSchema = new Schema(
       trim:true,
       required:true
     },
-    pBusinessDetails:{
-      type:Object,
+    pGstin:{
+      type:String,
       trim:true,
     },
-    PId:{
+    pPanelStatus:{
+      type:Boolean,
+      trim:true,
+      required:false
+    },
+    pQrType:{
       type:Number,
       trim:true,
       required:true
     },
-    pSlug:{
+    pContactPerson:{
       type:String,
       trim:true,
       required:true
     },
+    pContactPersonNumber:{
+      type:Number,
+      trim:true,
+      required:true
+    },
+    pUserRequirement:{
+      type:Number,
+      trim:true,
+      required:true
+    },
+    pDemoValue:{
+      type:Number,
+      trim:true,
+      required:true
+    },
+
+    pSlug:{
+      type:String,
+      trim:true,
+      required:false
+    },
     pSupportDetails:{
       type:Object,
       trim:true,
-      required:true
+      required:false
     },
     deleted:{
       type:Boolean,
@@ -64,24 +90,29 @@ const tenantSchema = new Schema(
     pUserTypes:{
       type:Object,
       trim:true,
-      required:true
+      required:false
     },
     pProductsOpted:{
-      type,Object,
-      trim:true
+      type:Object,
+      trim:false
     },
     pGeneralSettings:{
-      type,Object,
-      trim:true
-    }
+      type:Object,
+      trim:false
+    },
+    logo:{
+      type:Object,
+      trim:false
+    },
+    
   },
   {
     timestamps: true
   }
 );
 
-tenantSchema.index({
+partnerSchema.index({
   tenantId: 1
 });
 
-module.exports = mongoose.model("Tenant", tenantSchema);
+module.exports = mongoose.model("Partner", partnerSchema);

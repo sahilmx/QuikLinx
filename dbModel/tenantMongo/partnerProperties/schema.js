@@ -45,6 +45,10 @@ const partnerPropertiesSchema = new Schema(
       type: Double,
       required: true
     },
+    productsUsed: {
+      type: Object,
+      required: true
+    },
   },
   // TODO: find out what these 2 options do
   {

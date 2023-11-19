@@ -1,7 +1,5 @@
 // const { BASE_DB_URI } = require("../../config/env.json");
 
-const { ObjectID } = require("mongoose/lib/schema/index");
-
 const BASE_DB_URI= "mongodb://localhost:27017";
 
 

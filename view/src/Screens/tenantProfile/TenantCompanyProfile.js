@@ -44,6 +44,7 @@ export default function TenantCompanyProfile() {
 
     axios(config)
       .then(function (response) {
+        console.log("this is the response on tenantEditPage",response.data)
         setComapnyName(response.data.c_name);
         setCompanyEmail(response.data.c_email);
         setCompanyMobile(response.data.c_mobile);

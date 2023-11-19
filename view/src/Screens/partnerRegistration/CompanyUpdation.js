@@ -208,18 +208,18 @@ export default function CompanyUpdation() {
         if (companyPassword.length > 0)
           formData.append("password", companyPassword);
         formData.append("file", document.getElementById("file").files[0]);
-        formData.append("c_name", comapnyName);
-        formData.append("socials", JSON.stringify(companySocialMedia));
-        formData.append("c_email", companyEmail);
-        formData.append("c_mobile", companyMobile);
-        formData.append("website", companyUrl);
-        formData.append("c_address", JSON.stringify(companyAddress));
-        formData.append("c_gstin", companyGstin);
-        formData.append("c_panel_status", panelStatus);
-        formData.append("c_status", companyStatus);
-        formData.append("qr_type", qrType);
-        formData.append("c_contact_person", contactPerson);
-        formData.append("c_contact_person_number", contactPersonNumber);
+        formData.append("pName", comapnyName);
+        formData.append("pSocials", JSON.stringify(companySocialMedia));
+        formData.append("pEmail", companyEmail);
+        formData.append("pPhone", companyMobile);
+        formData.append("pWebsite", companyUrl);
+        formData.append("pAddress", JSON.stringify(companyAddress));
+        formData.append("pGstin", companyGstin);
+        formData.append("pDemoValue", panelStatus);
+        formData.append("deleted", companyStatus);
+        formData.append("pQrType", qrType);
+        formData.append("pContactPerson", contactPerson);
+        formData.append("pContactPersonNumber", contactPersonNumber);
         formData.append("industry", companyIndustry);
         formData.append("productsawailing", JSON.stringify(productsAvailing));
         formData.append("usertypes", JSON.stringify(userTypes));
@@ -283,21 +283,21 @@ export default function CompanyUpdation() {
   };
   const setAllValues = (data) => {
     console.log(data.productsavailing);
-    setComapnyName(data.c_name);
-    setCompanyEmail(data.c_email);
+    setComapnyName(data.pName);
+    setCompanyEmail(data.pEmail);
     setCompanyPassword("");
     setCompanyRePassword("");
-    setCompanyGstin(data.c_gstin);
-    setcompanyAddress((data.c_address));
-    setCompanySocialMedia(data.socials);
-    setContactPerson(data.c_contact_person ? data.c_contact_person : "");
+    setCompanyGstin(data.pGstin);
+    setcompanyAddress((data.pAddress));
+    setCompanySocialMedia(data.pSocials);
+    setContactPerson(data.pContactPerson ? data.pContactPerson : "");
     setContactPersonNumber(
-      data.c_contact_person_number ? data.c_contact_person_number : "",
+      data.pContactPersonNumber ? data.pContactPersonNumber : "",
     );
     setCompanyIndustry(data.industry ? data.industry : 0);
-    setCompanyMobile(data.c_mobile);
-    setCompanyUrl(data.website);
-    setPanelStatus(data.c_panel_status);
+    setCompanyMobile(data.pPhone);
+    setCompanyUrl(data.pWebsite);
+    setPanelStatus(data.pDemoValue);
     if (data.demovalue) {
       setDemoValue(data.demovalue);
     }
@@ -313,7 +313,7 @@ export default function CompanyUpdation() {
     } else {
       setproductsAvailing(productsAvailingObj);
     }
-    setCompanyStatus(data.c_status);
+    setCompanyStatus(data.deleted);
 
    
   };

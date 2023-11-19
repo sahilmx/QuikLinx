@@ -40,6 +40,11 @@ export default function CompanyRegistration() {
     WareHouse: false,
     Vendor: false,
   };
+  const partnerBusinessDetailsObj = {
+    Gstin: "",
+    Pan: "",
+    url: ""
+  };
 
   const [comapnyName, setComapnyName] = useState("");
   const [companyEmail, setCompanyEmail] = useState("");
@@ -52,6 +57,10 @@ export default function CompanyRegistration() {
   const [companySocialMedia, setCompanySocialMedia] = useState(
     companySocialMediaObj,
   );
+  const [partnerBusinessDetails, setPartnerBusinessDetails] = useState(
+    partnerBusinessDetailsObj,
+  );
+  
   const [picture, setPicture] = useState(null);
   const [thumbnail, setThumbnail] = useState(null);
   const [companyIndustry, setCompanyIndustry] = useState(0);
@@ -197,26 +206,27 @@ export default function CompanyRegistration() {
     ) {
       if (document.getElementById("file").files[0]) {
         const formData = new FormData();
-        formData.append("password", companyPassword);
+        formData.append("pPassword", companyPassword);
         formData.append("file", document.getElementById("file").files[0]);
-        formData.append("c_name", comapnyName);
-        formData.append("socials", JSON.stringify(companySocialMedia));
-        formData.append("c_email", companyEmail);
-        formData.append("c_mobile", companyMobile);
-        formData.append("website", companyUrl);
-        formData.append("c_address", JSON.stringify(companyAddress));
-        formData.append("c_gstin", companyGstin);
-        formData.append("c_panel_status", panelStatus);
-        formData.append("c_status", companyStatus);
-        formData.append("qr_type", qrType);
-        formData.append("c_contact_person", contactPerson);
+        formData.append("pName", comapnyName);
+        formData.append("pSocials", JSON.stringify(companySocialMedia));
+        formData.append("pEmail", companyEmail);
+        formData.append("pPhone", companyMobile);
+        formData.append("pWebsite", companyUrl);
+        formData.append("pAddress", JSON.stringify(companyAddress));
+        formData.append("pGstin", companyGstin);
+        formData.append("deleted", panelStatus);
+        formData.append("deleted", companyStatus);
+        formData.append("pQrType", qrType);
+        formData.append("pContactPerson", contactPerson);
+        formData.append("pPanelStatus", true);
      //   formData.append("industry", companyIndustry);
-        formData.append("c_contact_person_number", contactPersonNumber);
-       // formData.append("productsAwailing", JSON.stringify(productsAvailing));
+        formData.append("pContactPersonNumber", contactPersonNumber);
+       // formData.aclppend("productsAwailing", JSON.stringify(productsAvailing));
       //  formData.append("userTypes", JSON.stringify(userTypes));
-        formData.append("company_users_requirement", companyUserReqirements);
+        formData.append("pUserRequirement", companyUserReqirements);
         if (demoValue) {
-          formData.append("demoValue", demoValue);
+          formData.append("pDemoValue", demoValue);
         }
         console.log(formData);
         var config = {

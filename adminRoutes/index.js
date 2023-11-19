@@ -3,7 +3,7 @@ const router = require('express').Router();
 const connectionResolver= require('../middlewares/connectionResolver');
 
 router.use('/', connectionResolver.setAdminDb, require('./admin.route'));
-router.use('/vendor',require('./vendor.route'));
+router.use('/vendor', connectionResolver.setAdminDb,require('./vendor.route'));
 router.use('/rewardify',require('./rewardify.route'));
 router.use('/genuine',require('./genuinemark.route'));
 router.use('/rewardifyUsage',require('./rewardifyUsage.route'));
