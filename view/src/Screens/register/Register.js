@@ -22,26 +22,21 @@ export default function Register({ setAuthorized ,url}) {
   const handleLogin = () => {
     alert("user tried to login");
     if (emailError == null && passError == null) {
-      var data = JSON.stringify({
+      var data = {
         email: email,
         password: password,
-      });
+      };
 
       var config = {
         method: "post",
         url: "http://127.0.0.1:3003/admin/login",
-        headers: {
-          "Content-Type": "application/json",
-          headers:{
-            'Authorization': 'Bearer '+sessionStorage.getItem('access_token'), 
-          },
-          withCredentials:true
-        },
+        withCredentials:true,
         data: data,
       };
 
       axios(config)
         .then(function (response) {
+          console.log({response});
           if (response.data.success) {
             sessionStorage.setItem("access_token", response.data.token);
             sessionStorage.setItem("authorized",true);

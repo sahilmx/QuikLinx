@@ -86,11 +86,7 @@ const fetch = async (req, res) => {
         "token",
       );
 
-        new Cookies(req, res).set('accessToken', token, {
-          httpOnly: true
-        });
-        res.cookie("access_token", token, { maxAge: 900000, httpOnly: true });
-  
+
       let options = {
         maxAge: 1000 * 60 * 15, // would expire after 15 minutes
         httpOnly: true, // The cookie only accessible by the web server
@@ -98,7 +94,7 @@ const fetch = async (req, res) => {
       };
   
       // Set cookie
-      res.cookie("accessToken", token, options);
+      res.cookie("access_token", token, options);
       res.status(200).json({ success: true, adminId:admins._id,message:"Logged in Successful "});
     }else{
       res.status(200).json({ success: false, error:"Invalid Creds " });

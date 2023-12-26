@@ -17,9 +17,8 @@ const routes = require("./routes");
 const adminRoutes = require("./adminRoutes");
 const { default: helmet } = require("helmet");
 
-
-app.use(cors({ origin: true, credentials: true }));
 app.use(cookieParser());
+app.use(cors({ origin: ['http://localhost:3000', 'http://127.0.0.1:3000'], credentials: true,secure:true,sameSite:'none'}));
 app.use(helmet());
 
 connectAllDb();
